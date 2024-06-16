@@ -1,0 +1,30 @@
+{
+    "name": "Python and R Data Analysis",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "settings": { 
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+      "ms-python.python",
+      "ikuyadeu.r"
+    ],
+    "forwardPorts": [],
+    "postCreateCommand": "echo 'Container created. Ready to use Python and R for data analysis.'",
+    "remoteUser": "root",
+    "containerEnv": {
+      "AUTHENTICATION_TOKEN": "${containerSECRETS:AUTHENTICATION_TOKEN}",
+      "PROJECT_ID": "${containerSECRETS:PROJECT_ID}"
+    },
+    "secrets": {
+      "AUTHENTICATION_TOKEN": {
+        "description": "API token for accessing data services.",
+        "documentationUrl": "https://docs.example.com/api-authentication"
+      },
+      "PROJECT_ID": {
+        "description": "Project ID for project-specific data access."
+      }
+    }
+  }
+  
