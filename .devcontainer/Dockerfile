@@ -12,7 +12,7 @@ RUN apt-get update && \
 
 # Install Python dependencies from requirements.txt
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.csv
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Install R packages
 RUN R -e "install.packages(c('tidyverse', 'data.table', 'httr', 'jsonlite'), repos='http://cran.rstudio.com/')"
